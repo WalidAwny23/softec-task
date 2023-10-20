@@ -4,9 +4,14 @@ import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: LayoutComponent,
     children: [
+      {
+        path: 'products',
+        loadChildren: () => import('./../../feature_modules/products/products.module').then(m => m.ProductsModule)
+      },
+      { path: '', redirectTo: 'products', pathMatch: 'full' },
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
