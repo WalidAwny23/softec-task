@@ -13,4 +13,8 @@ export class ProductsService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>("assets/db/porducts.json");
   }
+
+  editProductQuantity(productId: number, quantity: number){
+    //ToDo edit request here
+  }
 }

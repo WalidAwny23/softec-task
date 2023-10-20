@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,9 +10,13 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
   imports: [
     CommonModule,
     LazyLoadImageModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }
