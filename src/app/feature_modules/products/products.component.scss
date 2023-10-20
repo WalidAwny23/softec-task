@@ -1,0 +1,29 @@
+.header{
+    font-size: larger; 
+    font-weight: bold;      
+}
+.products-container {
+    .product {
+        .image {
+            img {
+                max-width: 100%;
+            }
+        }
+        .name {
+            
+        }
+        .price {
+        }
+        .stock{
+            margin-left: auto;
+            &.low{
+                color: red;
+            }
+            i{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
