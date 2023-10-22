@@ -13,7 +13,7 @@
         <div class="stock p-2" [class.low]="data.AvailablePieces < 10">
             Stock:
             <strong *ngIf="!isEditActive">
-                {{data.AvailablePieces}}</strong>
+                {{data.AvailablePieces | number}}</strong>
             <i class="fa fa-edit ms-2" *ngIf="!isEditActive" (click)="editStock()"></i>
             <ng-container *ngIf="isEditActive">
                 <input type="number" class="edit-input" [(ngModel)]="stockEditValue">
