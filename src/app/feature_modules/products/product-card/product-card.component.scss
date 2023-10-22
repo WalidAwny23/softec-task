@@ -1,0 +1,26 @@
+.product {
+    .image {
+        img {
+            max-width: 100%;
+        }
+    }
+    .name {
+        
+    }
+    .price {
+    }
+    .stock{
+        margin-left: auto;
+        &.low{
+            color: red;
+        }
+        i{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .edit-input{
+            width: 50px;
+        }
+    }
+}

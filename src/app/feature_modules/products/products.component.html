@@ -6,29 +6,8 @@
         <div class="row">
             <!-- ToDo adding pagination for those data -->
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let product of productsList$ | async">
-                <div class="card product mb-3">
-                    <div class="image">
-                        <img [lazyLoad]="product.ProductImg" alt="Product image">
-                    </div>
-                    <div class="name p-2 text-center">
-                        {{product.ProductName}}
-                    </div>
-                    <div class="d-flex">
-                        <div class="price p-2">
-                            Price: <strong>
-                                {{product.ProductPrice | number}} EGP</strong>
-                        </div>
-                        <div class="stock p-2" [class.low]="product.AvailablePieces < 10">
-                            Stock:
-                            <strong *ngIf="!isEditActive || (isEditActive && selecterdProduct?.ProductId != product.ProductId)">
-                                {{product.AvailablePieces}}</strong>
-                            <i class="fa fa-edit ms-2" *ngIf="!isEditActive" (click)="editStock(product)"></i>
-                            <ng-container *ngIf="isEditActive && selecterdProduct?.ProductId == product.ProductId">
-                                <input type="number" class="edit-input" [(ngModel)]="stockEditValue">
-                                <i class="fa fa-check ms-2" (click)="saveStock()"></i></ng-container>
-                        </div>
-                    </div>
-                </div>
+                <app-product-card [data]="product" (save)="saveStock(product.ProductId, $event)"></app-product-card>
+
             </div>
 
         </div>

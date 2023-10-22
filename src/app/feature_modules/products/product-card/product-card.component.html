@@ -1,1 +1,23 @@
-<p>product-card works!</p>
+<div class="card product mb-3" *ngIf="data">
+    <div class="image">
+        <img [lazyLoad]="data.ProductImg" alt="Product image">
+    </div>
+    <div class="name p-2 text-center">
+        {{data.ProductName}}
+    </div>
+    <div class="d-flex">
+        <div class="price p-2">
+            Price: <strong>
+                {{data.ProductPrice | number}} EGP</strong>
+        </div>
+        <div class="stock p-2" [class.low]="data.AvailablePieces < 10">
+            Stock:
+            <strong *ngIf="!isEditActive">
+                {{data.AvailablePieces}}</strong>
+            <i class="fa fa-edit ms-2" *ngIf="!isEditActive" (click)="editStock()"></i>
+            <ng-container *ngIf="isEditActive">
+                <input type="number" class="edit-input" [(ngModel)]="stockEditValue">
+                <i class="fa fa-check ms-2" (click)="saveStock()"></i></ng-container>
+        </div>
+    </div>
+</div>

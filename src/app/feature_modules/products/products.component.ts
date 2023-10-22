@@ -11,9 +11,6 @@ import { Product } from 'src/app/shared/models/Product.modal';
 export class ProductsComponent implements OnInit {
 
   productsList$: Observable<Product[]> | undefined;
-  isEditActive: boolean = false;
-  selecterdProduct: Product | undefined = undefined;
-  stockEditValue: number = 0;
 
   constructor(private productsService: ProductsService) {
 
@@ -26,17 +23,8 @@ export class ProductsComponent implements OnInit {
     this.productsList$ = this.productsService.getProducts();
   }
 
-  // activate edit product mode
-  editStock(product: Product) {
-    this.isEditActive = true;
-    this.selecterdProduct = product;
-    this.stockEditValue = this.selecterdProduct.AvailablePieces;
-  }
-
   // save the edited product stock
-  saveStock() {
-    this.isEditActive = false;
-    this.productsService.editProductQuantity(this.selecterdProduct!.ProductId, this.stockEditValue);
-    this.selecterdProduct = undefined;
+  saveStock(productId: number, event: any) {
+    this.productsService.editProductQuantity(productId, event);
   }
 }
