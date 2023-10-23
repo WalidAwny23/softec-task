@@ -1,1 +1,111 @@
-<p>order-details works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="data-element">
+                    <div class="label">
+                        Order ID:
+                    </div>
+                    <div class="value">
+                        1
+                    </div>
+                </div>
+                <div class="data-element">
+                    <div class="label">
+                        Order Date:
+                    </div>
+                    <div class="value">
+                        {{"Wed Sep 18 2019 12:45:37 GMT+0200(Eastern European Standard Time)" | date}}
+                    </div>
+                </div>
+                <div class="data-element">
+                    <div class="label">
+                        Payment Type:
+                    </div>
+                    <div class="value">
+                        online
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="header">
+                    Client Info
+                </div>
+                <div class="data-element">
+                    <div class="label">
+                        Client Name:
+                    </div>
+                    <div class="value">
+                        1
+                    </div>
+                </div>
+                <div class="data-element">
+                    <div class="label">
+                        Name:
+                    </div>
+                    <div class="value">
+                        1
+                    </div>
+                </div>
+                <div class="data-element">
+                    <div class="label">
+                        Phone:
+                    </div>
+                    <div class="value">
+                        1
+                    </div>
+                </div>
+                <div class="data-element">
+                    <div class="label">
+                        Address:
+                    </div>
+                    <div class="value">
+                        1
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="header">
+                    Order Items
+                </div>
+                <div class="items">
+                    <div class="table-responsive table-borderless">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Qty</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr>
+                                    <td>
+                                        <img [lazyLoad]="'https:\/\/www.decolore.net\/wp-content\/uploads\/2017\/04\/product-mock-up-set-2.jpg'"
+                                            alt="image">
+                                        <div class="name">
+                                            test
+                                        </div>
+                                    </td>
+                                    <td>{{'50' | number}} EGP</td>
+                                    <td>{{'2' | number}} </td>
+                                    <td>{{'100' | number}} EGP</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total">
+                        Total: <strong> {{'100' | number}} EGP</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.card {
+    padding: 20px;
+    margin-bottom: 20px;
+    .header {
+        font-weight: bold;
+        font-size: larger;
+        margin-bottom: 20px;
+    }
+    .data-element {
+        .label {
+            font-weight: bold;
+            display: inline-block;
+            width: 150px;
+        }
+        .value {
+            display: inline-block;
+        }
+    }
+    .items{
+        tr{
+            td{
+                img{
+                    max-width: 100px;
+                    display: inline-block;
+                }
+                .name{
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+            }
+        }
+        .total{
+            text-align: right;
+        }
+    }
+}
