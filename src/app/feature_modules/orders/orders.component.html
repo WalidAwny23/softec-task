@@ -13,12 +13,12 @@
                         </tr>
                     </thead>
                     <tbody class="table-body">
-                        <tr class="cell-1" (click)="openOrder()">
-                            <td>1233</td>
-                            <td>Mohammed</td>
-                            <td>online</td>
-                            <td>{{'3000' | number}}</td>
-                            <td>{{"Wed Sep 18 2019 12:45:37 GMT+0200(Eastern European Standard Time)" | date}}</td>
+                        <tr class="cell-1" (click)="openOrder()" *ngFor="let order of OrdersList$ | async">
+                            <td>{{order.OrderId}}</td>
+                            <td>{{order.UserId}}</td>
+                            <td>{{order.PaymentType}}</td>
+                            <td>{{order.Products | totalPrice}}</td>
+                            <td>{{order.OrderDate | date: 'MMM dd, yyyy hh:mm:ss'}}</td>
                         </tr>
                     </tbody>
                 </table>
